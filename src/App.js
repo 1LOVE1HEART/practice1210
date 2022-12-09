@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+
 import './App.css';
 
 function App() {
+  const [background, setBackground] = useState('草間彌生');
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <div className={`${background === '草間彌生' ? 'kusama' : 'don'}`}></div>
+      <div className="button_area">
+        <button
+          onClick={() => {
+            setBackground('草間彌生');
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          草間彌生
+        </button>
+        <button
+          onClick={() => {
+            setBackground('董至成');
+          }}
+        >
+          董至成
+        </button>
+      </div>
+    </>
   );
 }
 
